@@ -25,8 +25,8 @@ export default (Vue as WithRefs<Refs, WithEvents<Events>>).extend({
       type: String,
       required: true,
       validator: (value) =>
-        startsWith(value, 'https://www.youtube.com/embed/') ||
-        startsWith(value, 'https://www.youtube-nocookie.com/embed/'),
+        startsWith(value as any, 'https://www.youtube.com/embed/') ||
+        startsWith(value as any, 'https://www.youtube-nocookie.com/embed/'),
     },
     alt: {
       type: String,
@@ -48,7 +48,7 @@ export default (Vue as WithRefs<Refs, WithEvents<Events>>).extend({
     },
     thumbnail: {
       type: Object as PropType<Thumbnail>,
-      validator: (val) => 'jpg' in val,
+      validator: (val) => 'jpg' in val as any,
       default: null,
     },
     iframeAttributes: {
