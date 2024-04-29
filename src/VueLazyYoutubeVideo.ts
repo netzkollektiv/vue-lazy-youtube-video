@@ -48,7 +48,7 @@ export default (Vue as WithRefs<Refs, WithEvents<Events>>).extend({
     },
     thumbnail: {
       type: Object as PropType<Thumbnail>,
-      validator: (val) => 'jpg' in val as any,
+      validator: (val: any) => 'jpg' in val as any,
       default: null,
     },
     iframeAttributes: {
